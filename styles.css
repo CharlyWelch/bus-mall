@@ -12,6 +12,11 @@ body {
     padding: 80px;
 }
 
+section {
+    width: 90%;
+    height: 400px;
+}
+
 company {
     margin-right: 50px;
 }
@@ -37,6 +42,10 @@ h4 {
     text-align: right;
 }
 
+#chart-area {
+    margin-top: 150px;
+}
+
 #select {
     display: flex;
     justify-content: space-around;
@@ -50,4 +59,25 @@ h4 {
     border: solid 2px black;
     padding: 10px;
     margin-bottom: 200px;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    float: right;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.6;
+}
+
+button:active {
+    padding: 25px 42px;
+    background-color: rgb(19, 46, 20); 
+    font-size: 20px;
 }

@@ -1,9 +1,9 @@
 class Product { //eslint-disable-line
-    constructor(name, src) {
+    constructor(name, src, displayed, clicked) {
         this.name = name;
-        this.src = './img/' + src;
-        this.displayed = 0;
-        this.clicked = 0;
+        this.src = src;
+        this.displayed = displayed || 0;
+        this.clicked = clicked || 0;
     }
     wasDisplayed() {
         this.displayed += 1;

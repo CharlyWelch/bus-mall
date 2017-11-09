@@ -87,7 +87,7 @@ function clickHandler (e) {
 
     appendRandomProduct();
 
-    if (clicks >= 3) {
+    if (clicks >= 25) {
         endSurvey();
         console.table(products);
 

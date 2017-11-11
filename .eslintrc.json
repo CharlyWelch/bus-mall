@@ -7,7 +7,9 @@
       "Product": false,
       "displayed": false,
       "clicked": false,
-      "swal": true
+      "renderTable": false,
+      "swal": true,
+      "products": false
     },
 
     //  To learn more about the rules: https://eslint.org/docs/rules/

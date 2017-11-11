@@ -8,6 +8,8 @@ const prodNames = [];
 const clickedSet = [];
 const displayedSet = [];
 
+swal('Welcome to BusMall Market Research!', 'Please choose the product you are most likely to purchase from each group of three shown.');
+
 if (localStorage.products){
     const productsArray = JSON.parse(localStorage.products);
     console.log('productsArray:', productsArray);
@@ -90,6 +92,9 @@ function clickHandler (e) {
     if (clicks >= 25) {
         endSurvey();
         console.table(products);
+        renderTable();
+
+        swal ('BusMall Thanks You', 'Please enjoy this coupon for 25% off your first purchase with BusMall: goToYourCoupon.com.');
 
         const chart = new Chart( //eslint-disable-line
             chartCtx,
@@ -136,11 +141,7 @@ function clickHandler (e) {
     }
 }
 
-// get button
-
 const button = document.getElementById('button');
-// add click event
-// remove chart from canvas tag.
 button.addEventListener('click', function() {
     const chartParent = document.getElementById('chart-area');
     chartParent.removeChild(chartParent.lastChild);
@@ -157,5 +158,41 @@ function endSurvey () {
         prodNames.push(products[i].name);
         clickedSet.push(products[i].clicked);
         displayedSet.push(products[i].displayed);
+    }
+}
+
+function renderTable() {
+    const tab = document.getElementById('tab');
+    const headRow = document.createElement('tr');
+    tab.appendChild(headRow);
+    const headBlank = document.createElement('th');
+    headRow.appendChild(headBlank);
+    const tabDisplay = document.createElement('th');
+    tabDisplay.textContent = 'Times Displayed';
+    headRow.appendChild(tabDisplay);
+    const tabClick = document.createElement('th');
+    tabClick.textContent = 'Times Clicked';
+    headRow.appendChild(tabClick);
+    const tabPercent = document.createElement('th');
+    tabPercent.textContent = 'Percentage Chosen';
+    headRow.appendChild(tabPercent);
+    for ( let i = 0; i < products.length; i++){
+        const productRow = document.createElement('tr');
+        const nameCell = document.createElement('th');
+        nameCell.textContent = products[i].name;
+        productRow.appendChild(nameCell);
+
+        const dispCell = document.createElement('td');
+        dispCell.textContent = products[i].displayed;
+        productRow.appendChild(dispCell);
+
+        const clickCell = document.createElement('td');
+        clickCell.textContent = products[i].clicked;
+        productRow.appendChild(clickCell);
+
+        const percentCell = document.createElement('td');
+        percentCell.textContent = ((products[i].clicked / products[i].displayed) * 100).toFixed(1);
+        productRow.appendChild(percentCell);
+        tab.appendChild(productRow);
     }
 }

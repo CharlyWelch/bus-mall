@@ -6,8 +6,10 @@
     "globals":{
       "Product": false,
       "displayed": false,
-      "clicked": false
+      "clicked": false,
+      "swal": true
     },
+
     //  To learn more about the rules: https://eslint.org/docs/rules/
     "rules": {
       "semi": ["error", "always"],

@@ -8,6 +8,8 @@ const prodNames = [];
 const clickedSet = [];
 const displayedSet = [];
 
+swal('Welcome to BusMall Market Research!', 'Please choose the product you are most likely to purchase from each group of three shown.');
+
 if (localStorage.products){
     const productsArray = JSON.parse(localStorage.products);
     console.log('productsArray:', productsArray);
@@ -90,6 +92,8 @@ function clickHandler (e) {
     if (clicks >= 25) {
         endSurvey();
         console.table(products);
+
+        swal ('BusMall Thanks You', 'Please enjoy this coupon for 25% off your first purchase with BusMall: goToYourCoupon.com.');
 
         const chart = new Chart( //eslint-disable-line
             chartCtx,

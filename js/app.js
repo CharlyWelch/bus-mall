@@ -181,14 +181,17 @@ function renderTable() {
         const nameCell = document.createElement('th');
         nameCell.textContent = products[i].name;
         productRow.appendChild(nameCell);
+
         const dispCell = document.createElement('td');
         dispCell.textContent = products[i].displayed;
         productRow.appendChild(dispCell);
+
         const clickCell = document.createElement('td');
         clickCell.textContent = products[i].clicked;
         productRow.appendChild(clickCell);
+
         const percentCell = document.createElement('td');
-        clickCell.textContent = (products[i].clicked / products[i].displayed) * 100;
+        percentCell.textContent = (products[i].clicked / products[i].displayed) * 100;
         productRow.appendChild(percentCell);
         tab.appendChild(productRow);
     }

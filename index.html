@@ -18,18 +18,20 @@
     <h1>Choose Your Products!</h1>
     <div id="select">
     </div>
-    <section id="chart-area">
-        <canvas id="chart">
-            <p>Please Update Your Browser and Come Back to See Us!</p>
-        </canvas>
-    </section> 
-    <div>
-        <button type="button" onclick="localStorage.clear()" id="button">Reset Data</button>
-    </div>
-    <section>
-        <table id="percentage">
-            <thead id="tab">Times Chosen as Percentage of Times Shown</thead>
-        </table>
+    <section id="fig-wrapper">
+        <div id="chart-area">
+            <canvas id="chart">
+                <p>Please Update Your Browser and Come Back to See Us!</p>
+            </canvas>
+        </div> 
+        <div>
+            <table id="percentage">
+                <thead id="tab">Times Chosen as Percentage of Times Shown</thead>
+            </table>
+        </div>
+        <div>
+            <button type="button" onclick="localStorage.clear()" id="button">Reset Data</button>
+        </div>
     </section>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/vendor/Chart.js"></script>

@@ -80,3 +80,18 @@ button:active {
     transform: scale(1.1);
     background-color: rgb(19, 46, 20);
 }
+
+table {
+    width: 600px;
+    position: absolute;
+}
+
+#fig-wrapper {
+    display: inline-block;
+}
+
+#percentage {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    text-align: center;
+    font-size: 1.5em;
+}

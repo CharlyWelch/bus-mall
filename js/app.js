@@ -191,7 +191,7 @@ function renderTable() {
         productRow.appendChild(clickCell);
 
         const percentCell = document.createElement('td');
-        percentCell.textContent = (products[i].clicked / products[i].displayed) * 100;
+        percentCell.textContent = ((products[i].clicked / products[i].displayed) * 100).toFixed(1);
         productRow.appendChild(percentCell);
         tab.appendChild(productRow);
     }
